@@ -176,6 +176,10 @@
     <Compile Include="Migrations\202006111425150_CreateTableNews2.Designer.cs">
       <DependentUpon>202006111425150_CreateTableNews2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006111432329_CreateTableNewsImages.cs" />
+    <Compile Include="Migrations\202006111432329_CreateTableNewsImages.Designer.cs">
+      <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -183,6 +187,7 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\NewsImage.cs" />
     <Compile Include="Models\Region.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -272,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006111425150_CreateTableNews2.resx">
       <DependentUpon>202006111425150_CreateTableNews2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006111432329_CreateTableNewsImages.resx">
+      <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

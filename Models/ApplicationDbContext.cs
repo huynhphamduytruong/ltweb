@@ -12,6 +12,7 @@ namespace ltweb.Models
             public DbSet<News> News { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Region> Regions { get; set; }
+        public DbSet<NewsImage> NewsImages { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
