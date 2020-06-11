@@ -21,8 +21,9 @@ namespace ltweb.Models
         public Region Region { get; set; }
         [Required]
         public int RegionId { get; set; }
+        public ApplicationUser User { get; set; }
         [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         
     }
 }

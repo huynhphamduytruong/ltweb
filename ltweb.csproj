@@ -157,29 +157,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006111307118_InitialModel.cs" />
-    <Compile Include="Migrations\202006111307118_InitialModel.Designer.cs">
-      <DependentUpon>202006111307118_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006111354028_CreateTableNews.cs" />
-    <Compile Include="Migrations\202006111354028_CreateTableNews.Designer.cs">
-      <DependentUpon>202006111354028_CreateTableNews.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006111409032_CreateTableNews1.cs" />
-    <Compile Include="Migrations\202006111409032_CreateTableNews1.Designer.cs">
-      <DependentUpon>202006111409032_CreateTableNews1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006111425150_CreateTableNews2.cs" />
-    <Compile Include="Migrations\202006111425150_CreateTableNews2.Designer.cs">
-      <DependentUpon>202006111425150_CreateTableNews2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006111432329_CreateTableNewsImages.cs" />
-    <Compile Include="Migrations\202006111432329_CreateTableNewsImages.Designer.cs">
-      <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
+    <Compile Include="Migrations\202006111650414_InitialModel.cs" />
+    <Compile Include="Migrations\202006111650414_InitialModel.Designer.cs">
+      <DependentUpon>202006111650414_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -257,11 +240,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\News\Create.cshtml" />
-    <Content Include="Views\News\Delete.cshtml" />
-    <Content Include="Views\News\Details.cshtml" />
-    <Content Include="Views\News\Edit.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -272,20 +250,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006111307118_InitialModel.resx">
-      <DependentUpon>202006111307118_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111354028_CreateTableNews.resx">
-      <DependentUpon>202006111354028_CreateTableNews.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111409032_CreateTableNews1.resx">
-      <DependentUpon>202006111409032_CreateTableNews1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111425150_CreateTableNews2.resx">
-      <DependentUpon>202006111425150_CreateTableNews2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111432329_CreateTableNewsImages.resx">
-      <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111650414_InitialModel.resx">
+      <DependentUpon>202006111650414_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
