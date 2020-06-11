@@ -181,14 +181,8 @@
     <Compile Include="Migrations\202006111432329_CreateTableNewsImages.Designer.cs">
       <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006111514390_CreateTableAdvertise.cs" />
-    <Compile Include="Migrations\202006111514390_CreateTableAdvertise.Designer.cs">
-      <DependentUpon>202006111514390_CreateTableAdvertise.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AdRegion.cs" />
-    <Compile Include="Models\Advertise.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -292,9 +286,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006111432329_CreateTableNewsImages.resx">
       <DependentUpon>202006111432329_CreateTableNewsImages.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111514390_CreateTableAdvertise.resx">
-      <DependentUpon>202006111514390_CreateTableAdvertise.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
