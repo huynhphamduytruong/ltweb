@@ -13,10 +13,12 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.News.Title)
+            @*@Html.DisplayNameFor(model => model.News.Title)*@
+            Title News
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            Title Image
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Image)
@@ -33,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            <img src="@item.Image" width="95" title="image"/>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
@@ -42,5 +44,4 @@
         </td>
     </tr>
 }
-
 </table>

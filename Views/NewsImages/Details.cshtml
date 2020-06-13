@@ -12,7 +12,8 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.News.Title)
+            @*@Html.DisplayNameFor(model => model.News.Title)*@
+            Title News
         </dt>
 
         <dd>
@@ -20,7 +21,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Title)
+            @*@Html.DisplayNameFor(model => model.Title)*@
+            Title Image
         </dt>
 
         <dd>
@@ -32,7 +34,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            
+            <img src="@Model.Image" width="95" title="image" />
         </dd>
 
     </dl>

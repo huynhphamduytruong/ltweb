@@ -24,6 +24,6 @@ namespace ltweb.Models
         public ApplicationUser User { get; set; }
         [Required]
         public string UserId { get; set; }
-        
+        public virtual ICollection<NewsImage> NewsImages { get; set; }
     }
 }
