@@ -13,7 +13,7 @@ namespace ltweb.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202006131235343_AddCategoryAndNewsModels"; }
+            get { return "202006141009094_AddCategoryAndNewsModels"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Lều báo Ba dấu hỏi</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -29,7 +29,7 @@
                 <ul class="nav navbar-nav">
                     @foreach (Category cat in categories)
                     {
-                        <li>@Html.ActionLink(cat.Name, cat.Id.ToString(),"Category")</li>
+                        <li>@Html.ActionLink(cat.Name, "GetNews", "Categories", new {Id = cat.StrippedName}, new {})</li>
                     }
                 </ul>
                 @*<ul class="nav navbar-nav">

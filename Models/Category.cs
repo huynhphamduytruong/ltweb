@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
+using ltweb.Helper;
 
 namespace ltweb.Models
 {
@@ -12,6 +15,12 @@ namespace ltweb.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        [NotMapped]
+        public string StrippedName
+        {
+            get => Name.StripVn();
+        }
 
         public Category() { }
 

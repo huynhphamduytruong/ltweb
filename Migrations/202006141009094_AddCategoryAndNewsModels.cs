@@ -21,17 +21,18 @@ namespace ltweb.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        CategoryId = c.Int(nullable: false),
+                        CategoryId = c.Int(),
                         Title = c.String(nullable: false),
                         Description = c.String(),
+                        CoverImage = c.String(),
                         DateTime = c.DateTime(nullable: false),
-                        RegionId = c.Int(nullable: false),
-                        UserId = c.String(nullable: false, maxLength: 128),
+                        RegionId = c.Int(),
+                        UserId = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
-                .ForeignKey("dbo.Regions", t => t.RegionId, cascadeDelete: true)
-                .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.Categories", t => t.CategoryId)
+                .ForeignKey("dbo.Regions", t => t.RegionId)
+                .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.CategoryId)
                 .Index(t => t.RegionId)
                 .Index(t => t.UserId);

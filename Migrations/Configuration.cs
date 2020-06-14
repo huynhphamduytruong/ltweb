@@ -23,9 +23,10 @@ namespace ltweb.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-            SeedCategories(context);
             SeedRoles(context);
             SeedUsers(context);
+            SeedCategories(context);
+            SeedNews(context);
         }
 
         private void SeedRoles(ApplicationDbContext context)
@@ -57,11 +58,11 @@ namespace ltweb.Migrations
                 Email = "admin@badauhoi.com",
                 EmailConfirmed = true,
                 UserName = "admin",
-                PasswordHash = new PasswordHasher().HashPassword("admin"),
+                //PasswordHash = new PasswordHasher().HashPassword("admin"),
             };
             if (!context.Users.Any(u => u.UserName == admin.UserName))
             {
-                if ((result = userMan.Create(admin)).Succeeded)
+                if ((result = userMan.Create(admin, "Mk@1234")).Succeeded)
                     userMan.AddToRole(admin.Id, "Admin");
                 else
                     throw new Exception("[CREATE \"admin\"] " + string.Join("\n", result.Errors));
@@ -77,7 +78,7 @@ namespace ltweb.Migrations
             };
             if (!context.Users.Any(u => u.UserName == writer.UserName))
             {
-                if ((result = userMan.Create(writer, "writer1")).Succeeded)
+                if ((result = userMan.Create(writer, "Mk@1234")).Succeeded)
                     userMan.AddToRole(writer.Id, "Writer");
                 else
                     throw new Exception("[CREATE \"writer1\"] " + string.Join("\n", result.Errors));
@@ -90,11 +91,11 @@ namespace ltweb.Migrations
                 Email = "user@email.com",
                 UserName = "user",
                 EmailConfirmed = true,
-                PasswordHash = new PasswordHasher().HashPassword("user")
+                //PasswordHash = new PasswordHasher().HashPassword("user")
             };
             if (!context.Users.Any(u => u.UserName == user.UserName))
             {
-                if ((result = userMan.Create(user)).Succeeded)
+                if ((result = userMan.Create(user, "Mk@1234")).Succeeded)
                     userMan.AddToRole(user.Id, "User");
                 else
                     throw new Exception("[CREATE \"user\"] " + string.Join("\n", result.Errors));
@@ -113,6 +114,73 @@ namespace ltweb.Migrations
 
             context.Categories.AddOrUpdate(cats);
             context.SaveChanges();
+        }
+
+        private void SeedNews(ApplicationDbContext context)
+        {
+            // Scrape from VnExpress at 14/06/20
+            News[] ns =
+            {
+                new News()
+                {
+                    Id = 1,
+                    CategoryId = 1,
+                    Title = "Đánh bả khiến xác chó rải khắp đường",
+                    Description =
+                        "Hai người tình nghi đánh bả khiến hơn 40 con chó, mèo chết trong đêm ở xã Thanh Hoà, huyện Như Xuân đã bị người dây vây bắt."
+                },
+                new News()
+                {
+                    Id = 2,
+                    CategoryId = 1,
+                    Title = "Mưa lớn, máy bay trượt khỏi đường băng",
+                    Description =
+                        "Máy bay VJ322 hãng Vietjet từ Phú Quốc, Kiên Giang đáp xuống sân bay Tân Sơn Nhất trong cơn mưa lớn đã trượt khỏi đường băng, trưa 14/6."
+                },
+                new News()
+                {
+                    Id = 3,
+                    CategoryId = 1,
+                    Title = "Vựa phế liệu 2.000 m2 cháy rụi",
+                    Description =
+                        "Vựa phế liệu rộng 2.000 m2 trong khu dân cư phường Thái Hòa, thị xã Tân Uyên, bị lửa thiêu rụi hoàn toàn, sáng 14/6."
+                },
+                new News()
+                {
+                    Id = 4,
+                    CategoryId = 3,
+                    Title = "Bằng Kiều cùng vợ cũ và các con nhảy múa, đàn hát",
+                    Description =
+                        "Bằng Kiều cùng vợ cũ - Trizzie Phương Trinh - và ba con trai nhảy múa, đàn hát trong những ngày ở nhà tránh dịch."
+                },
+                new News()
+                {
+                    Id = 5,
+                    CategoryId = 3,
+                    Title = "Nhan sắc tuổi 20 của con gái diễn viên 'Bao Thanh Thiên'",
+                    Description =
+                        "Lâm Khải Linh, con gái 20 tuổi của Cung Từ Ân - diễn viên \"Bao Thanh Thiên\" - được các thương hiệu săn đón nhờ có gu thẩm mỹ."
+                },
+                new News()
+                {
+                    Id = 6,
+                    CategoryId = 2,
+                    Title = "Braithwaite và cuốn sổ 'Giấc mơ'",
+                    Description =
+                        "Vô danh trước khi đến Barca hồi tháng 2, nhưng Martin Braithwaite đang tận hưởng từng khoảnh khắc của việc đứng trong hàng ngũ CLB lớn bậc nhất thế giới. "
+                },
+            };
+
+            try
+            {
+                context.News.AddOrUpdate(ns);
+                context.SaveChanges();
+
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException ex)
+            {
+                throw new Exception(ex.InnerException.Message);
+            }
         }
     }
 }

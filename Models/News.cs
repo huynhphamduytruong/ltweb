@@ -9,19 +9,17 @@ namespace ltweb.Models
     public class News
     {
         public int Id { get; set; }
-        [Required]
-        public int CategoryId { get; set; }
+        public int? CategoryId { get; set; }
         public Category Category { get; set; }
         [Required]
         public string Title { get; set; }
         //[Required]
         public string Description { get; set; }
-        [Required]
-        public DateTime DateTime { get; set; }
-        [Required]
-        public int RegionId { get; set; }
+        public string CoverImage { get; set; }
+        [Required] public DateTime DateTime { get; set; } = DateTime.Now;
+        public int? RegionId { get; set; }
         public Region Region { get; set; }
-        [Required]
+        //[Required]
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
 

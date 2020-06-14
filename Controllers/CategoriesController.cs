@@ -2,22 +2,77 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using ltweb.Models;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace ltweb.Controllers
 {
+    //public class CustomActionInvoker : ControllerActionInvoker
+    //{
+    //    public override bool InvokeAction(ControllerContext controllerContext, string actionName)
+    //    {
+    //        if (FindAction(controllerContext, GetControllerDescriptor(controllerContext), actionName) == null)
+    //        {
+    //            return base.InvokeAction(controllerContext, "StrippedNameHandler");
+    //        } 
+    //        else
+    //            return base.InvokeAction(controllerContext, actionName);
+    //    }
+    //}
+
     public class CategoriesController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _context;
+
+        public ApplicationDbContext Context
+        {
+            get { return _context ?? Request.GetOwinContext().Get<ApplicationDbContext>(); }
+            set { _context = value; }
+        }
+
+        //public CategoriesController()
+        //{
+        //    this.ActionInvoker = new CustomActionInvoker();
+        //}
 
         // GET: Categories
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View();
+        }
+
+        //public async Task<ActionResult> StrippedNameHandler()
+        //{
+        //    string strippedName = Request.RequestContext.RouteData.GetRequiredString("action");
+        //    //return Content(strippedName);
+        //    Category cat = (await Context.Categories.ToListAsync()).FirstOrDefault(c => c.StrippedName == strippedName);
+        //    if (cat == null)
+        //        return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+        //    ViewBag.Category = cat;
+        //    return View("ListNews");
+        //}
+
+        // GET: Categories/News/{id}
+        public async Task<ActionResult> GetNews(string Id)
+        {
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category cat = (await Context.Categories.ToListAsync()).FirstOrDefault(c => int.TryParse(Id, out _) ? c.Id == int.Parse(Id) : c.StrippedName == Id);
+            if (cat == null)
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+            ViewBag.Category = cat;
+            return View("ListNews");
         }
 
         // GET: Categories/Details/5
@@ -27,7 +82,7 @@ namespace ltweb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = Context.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -50,8 +105,8 @@ namespace ltweb.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
+                Context.Categories.Add(category);
+                Context.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +120,7 @@ namespace ltweb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = Context.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -82,8 +137,8 @@ namespace ltweb.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                Context.Entry(category).State = EntityState.Modified;
+                Context.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(category);
@@ -96,7 +151,7 @@ namespace ltweb.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = Context.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -109,19 +164,19 @@ namespace ltweb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            Category category = Context.Categories.Find(id);
+            Context.Categories.Remove(category);
+            Context.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    //if (disposing)
+        //    //{
+        //    //    Context.Dispose();
+        //    //}
+        //    base.Dispose(disposing);
+        //}
     }
 }
