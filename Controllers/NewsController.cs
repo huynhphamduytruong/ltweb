@@ -42,6 +42,7 @@ namespace ltweb.Controllers
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name");
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName");
             return View();
         }
 
@@ -61,6 +62,7 @@ namespace ltweb.Controllers
 
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName",news.UserId);
             return View(news);
         }
 
@@ -78,6 +80,7 @@ namespace ltweb.Controllers
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", news.UserId);
             return View(news);
         }
 
@@ -96,6 +99,7 @@ namespace ltweb.Controllers
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
+            ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", news.UserId);
             return View(news);
         }
 
