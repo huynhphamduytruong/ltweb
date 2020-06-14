@@ -164,19 +164,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\NewsImagesController.cs" />
+    <Compile Include="Controllers\RegionsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\ExtensionMethods.cs" />
     <Compile Include="Migrations\202006131232047_Init.cs" />
     <Compile Include="Migrations\202006131232047_Init.Designer.cs">
       <DependentUpon>202006131232047_Init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006131235343_AddCategoryAndNewsModels.cs" />
-    <Compile Include="Migrations\202006131235343_AddCategoryAndNewsModels.Designer.cs">
-      <DependentUpon>202006131235343_AddCategoryAndNewsModels.cs</DependentUpon>
+    <Compile Include="Migrations\202006141009094_AddCategoryAndNewsModels.cs" />
+    <Compile Include="Migrations\202006141009094_AddCategoryAndNewsModels.Designer.cs">
+      <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -225,6 +229,7 @@
     <Content Include="images\escheresque_%402X.png" />
     <Content Include="images\icon-location%402x.png" />
     <Content Include="images\icon-location.png" />
+    <Content Include="images\image.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\mejs\controls.png" />
     <Content Include="images\mejs\controls.svg" />
@@ -233,6 +238,7 @@
     <Content Include="images\mejs\speaker-mute.png" />
     <Content Include="images\mejs\speaker-on.png" />
     <Content Include="images\mejs\speaker.png" />
+    <Content Include="images\no-image.jpg" />
     <Content Include="images\sample-image.jpg" />
     <Content Include="images\shutterbug.jpg" />
     <Content Include="images\thumbs\about-us.jpg" />
@@ -627,6 +633,7 @@
     <Content Include="css\micons\fonts\icomoon.eot" />
     <Content Include="css\micons\fonts\icomoon.ttf" />
     <Content Include="css\micons\fonts\icomoon.woff" />
+    <Content Include="ef_cmd.ps1" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -676,6 +683,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\ListNews.cshtml" />
+    <Content Include="Views\NewsImages\Create.cshtml" />
+    <Content Include="Views\NewsImages\Delete.cshtml" />
+    <Content Include="Views\NewsImages\Details.cshtml" />
+    <Content Include="Views\NewsImages\Edit.cshtml" />
+    <Content Include="Views\NewsImages\Index.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Regions\Create.cshtml" />
+    <Content Include="Views\Regions\Delete.cshtml" />
+    <Content Include="Views\Regions\Details.cshtml" />
+    <Content Include="Views\Regions\Edit.cshtml" />
+    <Content Include="Views\Regions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -689,8 +717,8 @@
     <EmbeddedResource Include="Migrations\202006131232047_Init.resx">
       <DependentUpon>202006131232047_Init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006131235343_AddCategoryAndNewsModels.resx">
-      <DependentUpon>202006131235343_AddCategoryAndNewsModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006141009094_AddCategoryAndNewsModels.resx">
+      <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
