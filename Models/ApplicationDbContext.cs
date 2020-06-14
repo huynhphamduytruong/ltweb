@@ -9,7 +9,7 @@ namespace ltweb.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-            public DbSet<News> News { get; set; }
+        public DbSet<News> News { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Region> Regions { get; set; }
         public DbSet<NewsImage> NewsImages { get; set; }

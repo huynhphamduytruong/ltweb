@@ -10,20 +10,34 @@ namespace ltweb.Models
     {
         public int Id { get; set; }
         [Required]
-        public string Title { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
         [Required]
+        public string Title { get; set; }
+        //[Required]
         public string Description { get; set; }
         [Required]
         public DateTime DateTime { get; set; }
-        public  Category Category { get; set; }
-        [Required]
-        public int CategoryId { get; set; }
-        public Region Region { get; set; }
         [Required]
         public int RegionId { get; set; }
-        public ApplicationUser User { get; set; }
+        public Region Region { get; set; }
         [Required]
         public string UserId { get; set; }
-        
+        public ApplicationUser User { get; set; }
+
+        public virtual ICollection<NewsImage> Images { get; set; }
+    }
+
+    public class NewsImage
+    {
+        public int Id { get; set; }
+        [Required]
+        public string Caption { get; set; }
+        [Required]
+        public string Image { get; set; }
+        [Required]
+        public int NewsId { get; set; }
+        public News News { get; set; }
+
     }
 }

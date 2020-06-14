@@ -12,5 +12,13 @@ namespace ltweb.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+
+        public Category() { }
+
+        public Category(int Id, string Name)
+        {
+            this.Id = Id;
+            this.Name = Name;
+        }
     }
 }
