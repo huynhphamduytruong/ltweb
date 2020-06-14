@@ -15,9 +15,15 @@ namespace ltweb.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: NewsImages
-        public ActionResult Index()
+        public ActionResult Index(string search = "", int newsId = 0)
         {
-            var newsImages = db.NewsImages.Include(n => n.News);
+            var newsImages = db.NewsImages.Include(n => n.News).ToList();
+            if (search != "")
+                newsImages = newsImages.Where(pi => pi.Caption.ToLower().Contains(search.ToLower())).ToList();
+            if (newsId > 0)
+                newsImages = newsImages.Where(pi => pi.NewsId == newsId).ToList();
+            ViewBag.Search = search;
+            ViewBag.newsId = new SelectList(db.News, "Id", "Title", newsId);
             return View(newsImages.ToList());
         }
 

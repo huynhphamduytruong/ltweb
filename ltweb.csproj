@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202006141009094_AddCategoryAndNewsModels.Designer.cs">
       <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006141416227_addirtual.cs" />
+    <Compile Include="Migrations\202006141416227_addirtual.Designer.cs">
+      <DependentUpon>202006141416227_addirtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -226,11 +230,16 @@
     <Content Include="images\avatars\user-03.jpg" />
     <Content Include="images\avatars\user-04.jpg" />
     <Content Include="images\avatars\user-05.jpg" />
+    <Content Include="images\BB15sqv1.jfif" />
+    <Content Include="images\chay-2-3523-1592113869.jpg" />
+    <Content Include="images\cho-7730-1592134452.jpg" />
     <Content Include="images\escheresque_%402X.png" />
     <Content Include="images\icon-location%402x.png" />
     <Content Include="images\icon-location.png" />
     <Content Include="images\image.png" />
+    <Content Include="images\Khai-li-5119-1592107285.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\martin-braithwaite-v-marcelo-1-3398-2066-1592116190.jpg" />
     <Content Include="images\mejs\controls.png" />
     <Content Include="images\mejs\controls.svg" />
     <Content Include="images\mejs\pause.png" />
@@ -265,6 +274,7 @@
     <Content Include="images\thumbs\single\single-03.jpg" />
     <Content Include="images\thumbs\usaf-rocket.jpg" />
     <Content Include="images\thumbs\wall-clock.jpg" />
+    <Content Include="images\Vietjet-tru-o-t-kho-i-du-o-ng-5700-5271-1592121752.jpg" />
     <Content Include="js\jquery-2.1.3.min.js" />
     <Content Include="js\main.js" />
     <Content Include="js\modernizr.js" />
@@ -719,6 +729,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006141009094_AddCategoryAndNewsModels.resx">
       <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141416227_addirtual.resx">
+      <DependentUpon>202006141416227_addirtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -43,6 +43,7 @@ namespace ltweb.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name");
             ViewBag.UserId = new SelectList(db.Users, "Id", "UserName");
+            ViewBag.CoverImage = new SelectList(db.NewsImages, "Id", "Image");
             return View();
         }
 
@@ -51,7 +52,7 @@ namespace ltweb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,DateTime,CategoryId,RegionId,UserId")] News news)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
         {
             if (ModelState.IsValid)
             {
@@ -63,6 +64,7 @@ namespace ltweb.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "UserName",news.UserId);
+            ViewBag.CoverImage = new SelectList(db.NewsImages, "Id", "Image",news.CoverImage);
             return View(news);
         }
 
@@ -81,6 +83,7 @@ namespace ltweb.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", news.UserId);
+            ViewBag.CoverImage = new SelectList(db.NewsImages, "Id", "Image", news.CoverImage);
             return View(news);
         }
 
@@ -89,7 +92,7 @@ namespace ltweb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,DateTime,CategoryId,RegionId,UserId")] News news)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
         {
             if (ModelState.IsValid)
             {
@@ -100,6 +103,7 @@ namespace ltweb.Controllers
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", news.CategoryId);
             ViewBag.RegionId = new SelectList(db.Regions, "Id", "Name", news.RegionId);
             ViewBag.UserId = new SelectList(db.Users, "Id", "UserName", news.UserId);
+            ViewBag.CoverImage = new SelectList(db.NewsImages, "Id", "Image", news.CoverImage); 
             return View(news);
         }
 

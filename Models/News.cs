@@ -24,6 +24,8 @@ namespace ltweb.Models
         public ApplicationUser User { get; set; }
 
         public virtual ICollection<NewsImage> Images { get; set; }
+        public virtual ICollection<Category> Categories { get; set; }
+        public virtual ICollection<Region> Regions { get;set; }
     }
 
     public class NewsImage
