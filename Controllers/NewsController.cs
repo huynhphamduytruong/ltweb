@@ -17,7 +17,7 @@ namespace ltweb.Controllers
         // GET: News
         public ActionResult Index()
         {
-            var news = db.News.Include(n => n.Category).Include(n => n.Region);
+            var news = db.News.Include(n => n.Category).Include(n => n.Region).Include(n=> n.Title).Include(n=>n.Description).Include(n=>n.CoverImage).Include(n=>n.DateTime);
             return View(news.ToList());
         }
 

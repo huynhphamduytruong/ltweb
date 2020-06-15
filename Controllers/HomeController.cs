@@ -22,8 +22,8 @@ namespace ltweb.Controllers
 
         public async Task<ActionResult> Index()
         {
-            ViewBag.Categories = await Context.Categories.ToListAsync();
-            return View();
+            //ViewBag.Categories = await Context.Categories.ToListAsync();
+            return View(await Context.News.ToListAsync());
         }
 
         public ActionResult About()
