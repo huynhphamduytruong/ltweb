@@ -1,43 +1,49 @@
 ﻿@model IEnumerable<ltweb.Models.News>
 @{ ViewBag.Title = "Home Page";
-    Layout = "~/Views/Shared/_Layout.cshtml";}
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ApplicationDbContext Context = Request.GetOwinContext().Get<ApplicationDbContext>();
 
+    List<Category> categories = Context.Categories.ToList(); //(ViewBag.Categories as List<Category>);
+}
+<style>
+    .item1 {
+        grid-area: myArea;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'myArea myArea myArea myArea myArea';
+        grid-gap: 2px;
+        background-color: #f5f5f5;
+        padding: 2px;
+    }
+
+        .grid-container > div {
+            background-color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 20px;
+        }
+</style>
 
 
 <h2>Today's News</h2>
-@foreach (News item in Model)
-{
+<div class="grid-container">
 
-<li>
-    <div class="col-lg-2">
-        <a href="@Url.Action("Details/" + item.Id, "News")"><img src="@(item.CoverImage)" alt="@item.Title" width="128" /></a>
-    </div>
-    <div class="col-lg-2">
-        <span>@Html.ActionLink(item.Title, "Details", "News", new { Id = item.Id }, new { })</span>
-    </div>
-</li>}
-<body id="top" class="  pace-done">
+    @foreach (News item in Model)
+    {
+        <div class="row">
+            <div class="item1">
+                <a href="@Url.Action("Details/" + item.Id, "News")">
+                    <img src="@(item.CoverImage)" alt="@item.Title" width="200">
+                </a>
+            </div>
+            <div class="item2">
+                <h1> @Html.ActionLink(item.Title, "Details", "News", new { Id = item.Id }, new { })</h1>
+                <p style="font-size:20px">  @Html.ActionLink(item.Category.Name, "GetNews", "Categories", new { Id = item.CategoryId }, new { })</p>
+            </div>
+            <div class="item3"><p>@item.Description</p></div>
+        </div>
+    }
+</div>
 
-
-    <section id="bricks">
-
-        <div class="row masonry">
-
-            <!-- brick-wrapper -->
-            <div class="bricks-wrapper" style="position: relative; height: 2763.3px;">
-
-                <div class="grid-sizer"></div>
-
-
-
-
-            </div> <!-- end brick-wrapper -->
-
-        </div> <!-- end row -->
-    </section> <!-- end bricks -->
-
-
-
-
-
-</body>
