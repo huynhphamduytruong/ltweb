@@ -10,16 +10,9 @@
 <div>
     <h4>News</h4>
     <hr />
-    
-    <ul class="dl-horizontal">
-        <li>
-            <article>
-                <h2>@Html.DisplayFor(model => model.Title)</h2>
-                <p> <img src="@Model.CoverImage" title="Image" /></p>
-                <p>@Html.DisplayFor(model => model.Description)</p>
-                <p class="text-center">@Html.DisplayFor(model => model.DateTime)</p>
-            </article>
-        </li>
-    </ul>
+     <h2 style="color:red">Tiêu đề : @Html.DisplayFor(model => model.Title)</h2>
+     <p> <img src="@Model.CoverImage" title="Image" /></p>
+     <p>Nội dung: @Html.DisplayFor(model => model.Description)</p>
+     <p class="text-center">@Html.DisplayFor(model => model.DateTime)</p>
 </div>
 
