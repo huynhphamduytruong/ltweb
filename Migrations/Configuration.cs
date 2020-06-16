@@ -148,7 +148,7 @@ namespace ltweb.Migrations
                     Title = "Vựa phế liệu 2.000 m2 cháy rụi",
                     Description =
                         "Vựa phế liệu rộng 2.000 m2 trong khu dân cư phường Thái Hòa, thị xã Tân Uyên, bị lửa thiêu rụi hoàn toàn, sáng 14/6.",
-               CoverImage = "/images/chay-2-3523-1592113869.jpg"
+                    CoverImage = "/images/chay-2-3523-1592113869.jpg"
                 },
                 new News()
                 {
