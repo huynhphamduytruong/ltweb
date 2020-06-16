@@ -52,7 +52,7 @@ namespace ltweb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Title,Description,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
+        public ActionResult Create([Bind(Include = "Id,Title,Description,SubDescription,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace ltweb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,SubDescription,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
         {
             if (ModelState.IsValid)
             {

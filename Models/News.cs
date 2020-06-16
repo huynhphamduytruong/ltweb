@@ -15,6 +15,7 @@ namespace ltweb.Models
         public string Title { get; set; }
         //[Required]
         public string Description { get; set; }
+        public string SubDescription { get; set; }
         public string CoverImage { get; set; }
         [Required] public DateTime DateTime { get; set; } = DateTime.Now;
         public int? RegionId { get; set; }
