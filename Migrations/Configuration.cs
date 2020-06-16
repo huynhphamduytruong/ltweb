@@ -127,7 +127,8 @@ namespace ltweb.Migrations
                     CategoryId = 1,
                     Title = "Đánh bả khiến xác chó rải khắp đường",
                     Description =
-                        "Hai người tình nghi đánh bả khiến hơn 40 con chó, mèo chết trong đêm ở xã Thanh Hoà, huyện Như Xuân đã bị người dây vây bắt."
+                        "Hai người tình nghi đánh bả khiến hơn 40 con chó, mèo chết trong đêm ở xã Thanh Hoà, huyện Như Xuân đã bị người dây vây bắt.",
+                    CoverImage = "/images/cho-7730-1592134452.jpg"
                 },
                 new News()
                 {
@@ -135,7 +136,10 @@ namespace ltweb.Migrations
                     CategoryId = 1,
                     Title = "Mưa lớn, máy bay trượt khỏi đường băng",
                     Description =
-                        "Máy bay VJ322 hãng Vietjet từ Phú Quốc, Kiên Giang đáp xuống sân bay Tân Sơn Nhất trong cơn mưa lớn đã trượt khỏi đường băng, trưa 14/6."
+                        "Máy bay VJ322 hãng Vietjet từ Phú Quốc, Kiên Giang đáp xuống sân bay Tân Sơn Nhất trong cơn mưa lớn đã trượt khỏi đường băng, trưa 14/6.",
+
+
+                     CoverImage = "/images/Vietjet-tru-o-t-kho-i-du-o-ng-5700-5271-1592121752.jpg"
                 },
                 new News()
                 {
@@ -143,7 +147,8 @@ namespace ltweb.Migrations
                     CategoryId = 1,
                     Title = "Vựa phế liệu 2.000 m2 cháy rụi",
                     Description =
-                        "Vựa phế liệu rộng 2.000 m2 trong khu dân cư phường Thái Hòa, thị xã Tân Uyên, bị lửa thiêu rụi hoàn toàn, sáng 14/6."
+                        "Vựa phế liệu rộng 2.000 m2 trong khu dân cư phường Thái Hòa, thị xã Tân Uyên, bị lửa thiêu rụi hoàn toàn, sáng 14/6.",
+               CoverImage = "/images/chay-2-3523-1592113869.jpg"
                 },
                 new News()
                 {
@@ -151,7 +156,8 @@ namespace ltweb.Migrations
                     CategoryId = 3,
                     Title = "Bằng Kiều cùng vợ cũ và các con nhảy múa, đàn hát",
                     Description =
-                        "Bằng Kiều cùng vợ cũ - Trizzie Phương Trinh - và ba con trai nhảy múa, đàn hát trong những ngày ở nhà tránh dịch."
+                        "Bằng Kiều cùng vợ cũ - Trizzie Phương Trinh - và ba con trai nhảy múa, đàn hát trong những ngày ở nhà tránh dịch.",
+                    CoverImage = "/images/BB15sqv1.jfif"
                 },
                 new News()
                 {
@@ -159,7 +165,8 @@ namespace ltweb.Migrations
                     CategoryId = 3,
                     Title = "Nhan sắc tuổi 20 của con gái diễn viên 'Bao Thanh Thiên'",
                     Description =
-                        "Lâm Khải Linh, con gái 20 tuổi của Cung Từ Ân - diễn viên \"Bao Thanh Thiên\" - được các thương hiệu săn đón nhờ có gu thẩm mỹ."
+                        "Lâm Khải Linh, con gái 20 tuổi của Cung Từ Ân - diễn viên \"Bao Thanh Thiên\" - được các thương hiệu săn đón nhờ có gu thẩm mỹ.",
+                    CoverImage = "/images/Khai-li-5119-1592107285.jpg"
                 },
                 new News()
                 {
@@ -167,7 +174,8 @@ namespace ltweb.Migrations
                     CategoryId = 2,
                     Title = "Braithwaite và cuốn sổ 'Giấc mơ'",
                     Description =
-                        "Vô danh trước khi đến Barca hồi tháng 2, nhưng Martin Braithwaite đang tận hưởng từng khoảnh khắc của việc đứng trong hàng ngũ CLB lớn bậc nhất thế giới. "
+                        "Vô danh trước khi đến Barca hồi tháng 2, nhưng Martin Braithwaite đang tận hưởng từng khoảnh khắc của việc đứng trong hàng ngũ CLB lớn bậc nhất thế giới. ",
+                    CoverImage = "/images/martin-braithwaite-v-marcelo-1-3398-2066-1592116190.jpg"
                 },
             };
 
