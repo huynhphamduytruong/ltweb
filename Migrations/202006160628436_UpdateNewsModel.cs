@@ -3,7 +3,7 @@ namespace ltweb.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addirtual : DbMigration
+    public partial class UpdateNewsModel : DbMigration
     {
         public override void Up()
         {

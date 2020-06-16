@@ -182,9 +182,9 @@
     <Compile Include="Migrations\202006141009094_AddCategoryAndNewsModels.Designer.cs">
       <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006141416227_addirtual.cs" />
-    <Compile Include="Migrations\202006141416227_addirtual.Designer.cs">
-      <DependentUpon>202006141416227_addirtual.cs</DependentUpon>
+    <Compile Include="Migrations\202006160628436_UpdateNewsModel.cs" />
+    <Compile Include="Migrations\202006160628436_UpdateNewsModel.Designer.cs">
+      <DependentUpon>202006160628436_UpdateNewsModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -730,8 +730,8 @@
     <EmbeddedResource Include="Migrations\202006141009094_AddCategoryAndNewsModels.resx">
       <DependentUpon>202006141009094_AddCategoryAndNewsModels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006141416227_addirtual.resx">
-      <DependentUpon>202006141416227_addirtual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006160628436_UpdateNewsModel.resx">
+      <DependentUpon>202006160628436_UpdateNewsModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

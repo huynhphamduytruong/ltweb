@@ -7,13 +7,13 @@ namespace ltweb.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addirtual : IMigrationMetadata
+    public sealed partial class UpdateNewsModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addirtual));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateNewsModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006141416227_addirtual"; }
+            get { return "202006160628436_UpdateNewsModel"; }
         }
         
         string IMigrationMetadata.Source
