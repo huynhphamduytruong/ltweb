@@ -45,7 +45,7 @@ namespace ltweb.Controllers
         // GET: Categories
         public ActionResult Index()
         {
-            return View();
+            return View(Context.Categories.ToList());
         }
 
         //public async Task<ActionResult> StrippedNameHandler()
@@ -165,6 +165,11 @@ namespace ltweb.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Category category = Context.Categories.Find(id);
+            foreach (News news in Context.News.Where(n => n.CategoryId == category.Id))
+            {
+                news.CategoryId = null;
+            }
+
             Context.Categories.Remove(category);
             Context.SaveChanges();
             return RedirectToAction("Index");

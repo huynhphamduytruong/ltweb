@@ -42,7 +42,10 @@
                 <img src="@(item.CoverImage)" alt="@item.Title" width="200">
             </a>
             <h1> @Html.ActionLink(item.Title, "Details", "News", new { Id = item.Id }, new { })</h1>
-            <p style="font-size:20px">  @Html.ActionLink(item.Category.Name, "GetNews", "Categories", new { Id = item.CategoryId }, new { })</p>
+            @if(item.CategoryId.HasValue)
+            {
+                <p style="font-size:20px">  @Html.ActionLink(item.Category.Name, "GetNews", "Categories", new { Id = item.CategoryId }, new { })</p>
+            }
             <p>@item.Description</p>
         </div>
         <div class="item2">
@@ -50,7 +53,10 @@
                 <img src="@(item.CoverImage)" alt="@item.Title" width="200">
             </a>
             <h1> @Html.ActionLink(item.Title, "Details", "News", new { Id = item.Id }, new { })</h1>
-            <p style="font-size:20px">  @Html.ActionLink(item.Category.Name, "GetNews", "Categories", new { Id = item.CategoryId }, new { })</p>
+            @if (item.CategoryId.HasValue)
+            {
+                <p style="font-size:20px">  @Html.ActionLink(item.Category.Name, "GetNews", "Categories", new { Id = item.CategoryId }, new { })</p>
+            }
             <p>@item.Description</p>
         </div>
 

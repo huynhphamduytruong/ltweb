@@ -174,6 +174,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\ExtensionMethods.cs" />
+    <Compile Include="Helper\MD5.cs" />
     <Compile Include="Migrations\202006131232047_Init.cs" />
     <Compile Include="Migrations\202006131232047_Init.Designer.cs">
       <DependentUpon>202006131232047_Init.cs</DependentUpon>

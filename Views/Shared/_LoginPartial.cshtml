@@ -10,12 +10,13 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Xin chào, @User.Identity.GetUserName()<span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li>@Html.ActionLink("Manager News", "Index", "News")</li>
-                <li>@Html.ActionLink("Manager NewsImages", "Index", "NewsImages")</li>
+                @*<li>@Html.ActionLink("Manager NewsImages", "Index", "NewsImages")</li>*@
                 <li>@Html.ActionLink("Manager Regions", "Index", "Regions")</li>
                 <li>@Html.ActionLink("Manager Categories", "Index", "Categories")</li>
                 
                 <li><a href="javascript:document.getElementById('logoutForm').submit()">Đăng xuất</a></li>
             </ul>
+        </li>
 
             @*<li>
             @Html.ActionLink("Chào " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })

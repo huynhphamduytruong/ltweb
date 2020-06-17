@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using ltweb.Helper;
 using ltweb.Models;
 
 namespace ltweb.Controllers
@@ -92,11 +95,23 @@ namespace ltweb.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,Description,SubDescription,CoverImage,DateTime,CategoryId,RegionId,UserId")] News news)
+        public ActionResult Edit([Bind(Include = "Id,Title,Description,SubDescription,CoverImage,DateTime,CategoryId,RegionId")] News news, HttpPostedFileBase cover)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(news).State = EntityState.Modified;
+                if (cover != null && cover.ContentLength > 0)
+                {
+                    string hash = MD5Helper.Calculate(cover);
+
+                    string filename = Path.Combine(HttpContext.Server.MapPath("~/images"), hash + "_" + cover.FileName);
+                    
+                    cover.SaveAs(filename);
+
+                    news.CoverImage = Path.Combine("\\images", hash + "_" + cover.FileName).Replace("\\", "/");
+                }
+
+
+                db.Entry(news).State = EntityState.Modified;    
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

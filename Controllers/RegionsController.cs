@@ -110,6 +110,12 @@ namespace ltweb.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Region region = db.Regions.Find(id);
+            foreach (News news in db.News.Where(n => n.RegionId == region.Id))
+            {
+                news.RegionId = null;
+            }
+            //db.SaveChanges();
+
             db.Regions.Remove(region);
             db.SaveChanges();
             return RedirectToAction("Index");

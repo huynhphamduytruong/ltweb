@@ -50,10 +50,9 @@
                 <ul class="nav navbar-nav">
                     @foreach (Category cat in categories)
                     {
-                        <li>@Html.ActionLink(cat.Name, "GetNews", "Categories", new {Id = cat.StrippedName}, new {})</li>
+                        <li>@Html.ActionLink(cat.Name, "GetNews", "Categories", new {Id = cat.Id}, new {})</li>
                     }
                 </ul>
-
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
